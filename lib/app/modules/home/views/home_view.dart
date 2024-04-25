@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/widget/dark_theme_toggle.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
@@ -17,6 +18,9 @@ class HomeView extends BaseView<HomeController> {
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
       appBarTitleText: 'GetX Templates on GitHub',
+      actions: [
+        DarkThemeToggle(),
+      ],
     );
   }
 

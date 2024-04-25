@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/widget/dark_theme_toggle.dart';
 import '/app/modules/settings/widgets/item_settings_widgets.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
@@ -18,9 +19,9 @@ class SettingsView extends BaseView<SettingsController> {
     return Column(
       children: [
         ItemSettings(
-          title: appLocalization.settingsTheme,
+          title: "Enable Dark Theme",
           prefixImage: 'ic_theme.png',
-          suffixImage: 'arrow_forward.svg',
+          suffixWidget: DarkThemeToggle(),
           onTap: _onThemeItemClicked,
         ),
         _getHorizontalDivider(),
@@ -57,5 +58,4 @@ class SettingsView extends BaseView<SettingsController> {
   void _onFontSizeItemClicked() {
     showToast('Font Size: Development in progress');
   }
-
 }

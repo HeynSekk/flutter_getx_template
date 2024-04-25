@@ -34,7 +34,7 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.colorAccent,
+        backgroundColor: context.theme.colorScheme.primary,
         selectedItemColor: selectedItemColor,
         unselectedItemColor: unselectedItemColor,
         currentIndex: navController.selectedIndex,

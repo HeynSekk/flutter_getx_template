@@ -22,12 +22,12 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
   Widget body(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Obx(() => _getView()),
+        child: Obx(() => _getView(context)),
       ),
     );
   }
 
-  Widget _getView() {
+  Widget _getView(BuildContext context) {
     return controller.projectUiData.repositoryName.isEmpty
         ? Container()
         : Container(
@@ -37,7 +37,8 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
               children: [
                 Text(
                   controller.projectUiData.repositoryName,
-                  style: cardTitleStyle,
+                  style: cardTitleStyle.copyWith(
+                      color: context.theme.colorScheme.onSurface),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                 ),
@@ -102,8 +103,10 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
     return Expanded(
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Text(controller.projectUiData.description,
-            style: descriptionTextStyle),
+        child: Text(
+          controller.projectUiData.description,
+          style: descriptionTextStyle,
+        ),
       ),
     );
   }

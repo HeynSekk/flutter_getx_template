@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
@@ -25,13 +26,14 @@ class ElevatedContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
           boxShadow: [
             BoxShadow(
-              color: AppColors.elevatedContainerColorOpacity,
-              spreadRadius: 3,
-              blurRadius: 8,
-              offset: const Offset(0, 3), // changes position of shadow
+              // color: AppColors.elevatedContainerColorOpacity,
+              color: context.theme.colorScheme.shadow,
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: const Offset(0, 1), // changes position of shadow
             ),
           ],
-          color: AppColors.pageBackground),
+          color: bgColor),
       child: child,
     );
   }

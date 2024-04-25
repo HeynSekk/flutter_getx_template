@@ -11,7 +11,7 @@ class AppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: pageTitleStyle,
+      style: pageTitleStyle.copyWith(color: Colors.white),
       textAlign: TextAlign.center,
     );
   }

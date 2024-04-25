@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '/app/core/values/app_colors.dart';
 import '/app/core/widget/app_bar_title.dart';
@@ -9,7 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final bool isBackButtonEnabled;
 
-  CustomAppBar({
+  const CustomAppBar({
     Key? key,
     required this.appBarTitleText,
     this.actions,
@@ -22,7 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.appBarColor,
+      backgroundColor: context.theme.colorScheme.primary,
       centerTitle: true,
       elevation: 0,
       automaticallyImplyLeading: isBackButtonEnabled,

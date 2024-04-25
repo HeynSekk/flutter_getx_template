@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '/app/core/values/app_colors.dart';
 
+// will refactor color values with ThemeData or extension later
+
 const centerTextStyle = TextStyle(
   fontSize: 28,
   fontWeight: FontWeight.bold,
@@ -144,10 +146,10 @@ const cardSmallTagStyle = TextStyle(
     color: AppColors.textColorGreyDark);
 
 const pageTitleStyle = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
-    height: 1.15,
-    color: AppColors.appBarTextColor);
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+  height: 1.15,
+);
 
 final pageTitleBlackStyle =
     pageTitleStyle.copyWith(color: AppColors.textColorPrimary);

@@ -49,7 +49,8 @@ abstract class BaseView<Controller extends BaseController>
         statusBarIconBrightness: Brightness.dark,
       ),
       child: Material(
-        color: Colors.transparent,
+        // color: Colors.transparent,
+        color: Colors.black,
         child: pageScaffold(context),
       ),
     );
@@ -58,7 +59,8 @@ abstract class BaseView<Controller extends BaseController>
   Widget pageScaffold(BuildContext context) {
     return Scaffold(
       //sets ios status bar color
-      backgroundColor: pageBackgroundColor(),
+      backgroundColor: context.theme.colorScheme.background,
+      // backgroundColor: Colors.black,
       key: globalKey,
       appBar: appBar(context),
       floatingActionButton: floatingActionButton(),
@@ -89,7 +91,7 @@ abstract class BaseView<Controller extends BaseController>
   }
 
   Color pageBackgroundColor() {
-    return AppColors.pageBackground;
+    return Colors.black;
   }
 
   Color statusBarColor() {

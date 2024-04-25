@@ -22,6 +22,7 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
   @override
   Widget body(BuildContext context) {
     return ElevatedContainer(
+      bgColor: context.theme.colorScheme.surface,
       child: Ripple(
         onTap: _onTap,
         child: Padding(
@@ -35,7 +36,7 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
                 radius: AppValues.circularImageSize_30,
               ),
               const SizedBox(width: AppValues.margin_10),
-              _getDetailsView(),
+              _getDetailsView(context),
             ],
           ),
         ),
@@ -43,14 +44,15 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
     );
   }
 
-  Widget _getDetailsView() {
+  Widget _getDetailsView(BuildContext context) {
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             dataModel.repositoryName,
-            style: cardTitleStyle,
+            style: cardTitleStyle.copyWith(
+                color: context.theme.colorScheme.onSurface),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
