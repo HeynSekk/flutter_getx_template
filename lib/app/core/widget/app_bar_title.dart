@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '/app/core/values/text_styles.dart';
 
@@ -11,7 +12,9 @@ class AppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: pageTitleStyle.copyWith(color: Colors.white),
+      style: context.theme.textTheme.titleMedium!.copyWith(
+        color: context.theme.colorScheme.onPrimary,
+      ),
       textAlign: TextAlign.center,
     );
   }

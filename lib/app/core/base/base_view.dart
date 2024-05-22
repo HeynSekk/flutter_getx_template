@@ -13,7 +13,7 @@ import '/flavors/build_config.dart';
 
 abstract class BaseView<Controller extends BaseController>
     extends GetView<Controller> {
-  final GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
+  // final GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
 
   AppLocalizations get appLocalization => AppLocalizations.of(Get.context!)!;
 
@@ -61,7 +61,7 @@ abstract class BaseView<Controller extends BaseController>
       //sets ios status bar color
       backgroundColor: context.theme.colorScheme.background,
       // backgroundColor: Colors.black,
-      key: globalKey,
+      // key: globalKey,
       appBar: appBar(context),
       floatingActionButton: floatingActionButton(),
       body: pageContent(context),

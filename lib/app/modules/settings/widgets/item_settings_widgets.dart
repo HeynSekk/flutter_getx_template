@@ -37,7 +37,12 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
               color: context.theme.colorScheme.onBackground,
             ),
             const SizedBox(width: AppValues.smallPadding),
-            Text(title, style: settingsItemStyle),
+            Text(
+              title,
+              style: Get.context!.textTheme.titleMedium!.copyWith(
+                color: Get.context!.theme.colorScheme.onBackground,
+              ),
+            ),
             const Spacer(),
             suffixWidget != null
                 ? suffixWidget!

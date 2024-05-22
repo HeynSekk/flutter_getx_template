@@ -1,4 +1,7 @@
 abstract class AppValues {
+  //spaces
+  static const double spaceM = 16;
+
   static const double padding = 16;
   static const double padding_zero = 0;
   static const double halfPadding = 8;

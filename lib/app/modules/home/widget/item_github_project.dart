@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/values/other_values.dart';
 import 'package:flutter_getx_template/app/core/widget/ripple.dart';
 import 'package:get/get.dart';
 
@@ -51,17 +52,18 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
         children: [
           Text(
             dataModel.repositoryName,
-            style: cardTitleStyle.copyWith(
-                color: context.theme.colorScheme.onSurface),
-            overflow: TextOverflow.ellipsis,
+            style: context.textTheme.titleLarge!
+                .copyWith(color: context.theme.colorScheme.onSurface),
+            overflow: AppTextOverflow.primaryOverflowStyle,
             maxLines: 1,
           ),
           const SizedBox(height: AppValues.margin_4),
           Text(
             dataModel.ownerLoginName,
-            style: cardSubtitleStyle,
+            style: context.textTheme.titleSmall!
+                .copyWith(color: context.theme.colorScheme.onSurfaceVariant),
             maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+            overflow: AppTextOverflow.primaryOverflowStyle,
           ),
           const SizedBox(height: AppValues.margin_4),
           _getForkStarWatcherView(),
@@ -78,20 +80,18 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
           value: dataModel.numberOfFork.toString(),
           height: AppValues.iconSize_20,
           width: AppValues.iconSize_20,
-          color: AppColors.iconColorDefault,
+          color: Get.context!.theme.colorScheme.onSurfaceVariant,
         ),
         IconTextWidget(
-          icon: Icons.star_border,
-          value: dataModel.numberOfStar.toString(),
-          size: AppValues.iconSize_20,
-          color: AppColors.iconColorDefault,
-        ),
+            icon: Icons.star_border,
+            value: dataModel.numberOfStar.toString(),
+            size: AppValues.iconSize_20,
+            color: Get.context!.theme.colorScheme.onSurfaceVariant),
         IconTextWidget(
-          icon: Icons.visibility_outlined,
-          value: dataModel.watchers.toString(),
-          size: AppValues.iconSize_20,
-          color: AppColors.iconColorDefault,
-        ),
+            icon: Icons.visibility_outlined,
+            value: dataModel.watchers.toString(),
+            size: AppValues.iconSize_20,
+            color: Get.context!.theme.colorScheme.onSurfaceVariant),
       ],
     );
   }

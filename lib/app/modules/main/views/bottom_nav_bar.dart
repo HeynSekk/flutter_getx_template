@@ -19,9 +19,7 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
 
   final OnBottomNavItemSelected onItemSelected;
   final navController = BottomNavController();
-  final Key bottomNavKey = GlobalKey();
-  final Color selectedItemColor = Colors.white;
-  final Color unselectedItemColor = Colors.grey;
+  // final Key bottomNavKey = GlobalKey();
 
   @override
   Widget body(BuildContext context) {
@@ -29,14 +27,15 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
 
     return Obx(
       () => BottomNavigationBar(
-        key: bottomNavKey,
+        // key: bottomNavKey,
         items: _navItemBuilder(navItems),
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         backgroundColor: context.theme.colorScheme.primary,
-        selectedItemColor: selectedItemColor,
-        unselectedItemColor: unselectedItemColor,
+        selectedItemColor: context.theme.colorScheme.onPrimary,
+        unselectedItemColor: context.theme.colorScheme.onBackground,
+        // unselectedItemColor: Colors.grey,
         currentIndex: navController.selectedIndex,
         onTap: (index) {
           navController.updateSelectedIndex(index);
@@ -66,7 +65,9 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
         fileName: navItem.iconSvgName,
         height: AppValues.iconDefaultSize,
         width: AppValues.iconDefaultSize,
-        color: isSelected ? selectedItemColor : unselectedItemColor,
+        color: isSelected
+            ? Get.context!.theme.colorScheme.onPrimary
+            : Get.context!.theme.colorScheme.onBackground,
       ),
       label: navItem.navTitle,
       tooltip: navItem.navTitle,
