@@ -1,4 +1,5 @@
 import 'package:flutter_getx_template/app/core/utils/theme/theme_controller.dart';
+import 'package:flutter_getx_template/app/modules/main/controllers/bottom_nav_controller.dart';
 import 'package:get/get.dart';
 
 import 'local_source_bindings.dart';
@@ -12,5 +13,6 @@ class InitialBinding implements Bindings {
     RepositoryBindings().dependencies();
     LocalSourceBindings().dependencies();
     Get.put<ThemeController>(ThemeController(), permanent: true);
+    Get.put<BottomNavController>(BottomNavController(), permanent: true);
   }
 }

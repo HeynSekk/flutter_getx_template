@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
-import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
-import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/core/widget/icon_text_widgets.dart';
 import '/app/modules/project_details/controllers/project_details_controller.dart';
@@ -37,8 +35,11 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
               children: [
                 Text(
                   controller.projectUiData.repositoryName,
-                  style: cardTitleStyle.copyWith(
-                      color: context.theme.colorScheme.onSurface),
+                  style: Get.context!.textTheme.headlineMedium!.copyWith(
+                    color: Get.context!.theme.colorScheme.onSurface,
+                  ),
+                  // style: cardTitleStyle.copyWith(
+                  //     color: context.theme.colorScheme.onSurface),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                 ),
@@ -62,7 +63,10 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
         const SizedBox(width: AppValues.margin_6),
         Text(
           controller.projectUiData.ownerLoginName,
-          style: cardSubtitleStyle,
+          style: Get.context!.textTheme.titleSmall!.copyWith(
+            color: Get.context!.theme.colorScheme.onSurface,
+          ),
+          // style: cardSubtitleStyle,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -80,19 +84,20 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
             value: controller.projectUiData.numberOfFork.toString(),
             height: AppValues.iconSize_20,
             width: AppValues.iconSize_20,
-            color: AppColors.iconColorDefault,
+            color: Get.context!.theme.colorScheme.onSurface,
+            // color: AppColors.iconColorDefault,
           ),
           IconTextWidget(
             icon: Icons.star_border,
             value: controller.projectUiData.numberOfStar.toString(),
             size: AppValues.iconSize_20,
-            color: AppColors.iconColorDefault,
+            // color: AppColors.iconColorDefault,
           ),
           IconTextWidget(
             icon: Icons.visibility_outlined,
             value: controller.projectUiData.watchers.toString(),
             size: AppValues.iconSize_20,
-            color: AppColors.iconColorDefault,
+            // color: AppColors.iconColorDefault,
           ),
         ],
       ),

@@ -6,7 +6,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
-import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/favorite/controllers/favorite_controller.dart';
 

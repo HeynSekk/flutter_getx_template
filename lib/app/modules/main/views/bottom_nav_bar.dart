@@ -3,7 +3,6 @@ import 'package:flutter_getx_template/app/core/base/base_widget_mixin.dart';
 import 'package:flutter_getx_template/app/core/widget/asset_image_view.dart';
 import 'package:get/get.dart';
 
-import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
 import '/app/modules/main/controllers/bottom_nav_controller.dart';
 import '/app/modules/main/model/menu_code.dart';
@@ -18,8 +17,8 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
   }) : super(key: key);
 
   final OnBottomNavItemSelected onItemSelected;
-  final navController = BottomNavController();
-  // final Key bottomNavKey = GlobalKey();
+  final navController = Get.find<BottomNavController>();
+  final Key bottomNavKey = GlobalKey();
 
   @override
   Widget body(BuildContext context) {
@@ -27,7 +26,7 @@ class BottomNavBar extends StatelessWidget with BaseWidgetMixin {
 
     return Obx(
       () => BottomNavigationBar(
-        // key: bottomNavKey,
+        key: bottomNavKey,
         items: _navItemBuilder(navItems),
         showSelectedLabels: true,
         showUnselectedLabels: true,
